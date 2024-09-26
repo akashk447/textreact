@@ -2,7 +2,7 @@ import React from 'react'
 import './login.css'
 function Login() {
     return (
-        <div className=''>
+        <div className='login'>
             <div className="logo"> <img src="assets/img/logo.png" alt="logo" /> <strong>ME</strong>LON </div>
             <div className="box">
                 <div className="content">

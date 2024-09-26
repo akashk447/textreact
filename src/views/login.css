@@ -1,95 +1,203 @@
-.auth-one-bg-position {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 380px;
+
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0
 }
 
-.auth-one-bg {
-   background-position: center;
-    background-size: cover;
-    background-image: radial-gradient(rgba(0, 0, 0, 0) 0%, rgb(25 75 255 / 17%) 100%), radial-gradient(rgba(0, 0, 0, 0) 33%, rgba(240, 104, 8, 0.47) 166%);
+.clearfix:after {
+    clear: both
 }
 
-#video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+.login {
+    background-color: #f9f9f9;
+    padding-top: 60px
 }
 
-#video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.login .logo,
+.login .single-sign-on,
+.login .footer {
+    margin: 0 auto;
+    text-align: center
 }
 
-.auth-one-bg .bg-overlay {
-    background: linear-gradient(to right, rgb(99 41 255 / 6%), rgb(120 247 40 / 18%));
-    opacity: 0.9;
+.login .logo {
+    padding: 15px;
+    font-size: 23px
 }
 
-.bg-overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    opacity: 0.7;
-    background-color: #000;
+.login .box {
+    background-color: #fff;
+    width: 350px;
+    margin: 0 auto;
+    border: 1px solid #d9d9d9;
+    border-top: 5px solid #4d7496
 }
 
-.auth-one-bg .shape {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: none;
+.login .box .content {
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 15px
 }
 
-.auth-one-bg .shape > svg {
-    width: 100%;
-    height: auto;
-    fill: #ecf0fa;
+.login .box form {
+    padding: 0;
+    margin: 0
 }
 
-.particles-js-canvas-el {
-    position: relative;
+.login .box .form-title {
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 25px
 }
 
-.auth-page-wrapper .auth-page-content {
-    padding-bottom: 60px;
-    position: relative;
-    z-index: 2;
-    width: 100%;
+.login .box .form-group {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px
 }
 
-.login-bg {
-    background-color: rgb(255 255 255 / 50%);
-    backdrop-filter: saturate(180%) blur(1px);
-    border: 2px solid rgb(0 246 253 / 0%);
-    box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px, rgb(0 0 0 / 5%) 0px 4px 6px -2px;
+.login .box .form-actions {
+    background-color: #fff;
+    border-top: 0;
+    padding: 10px 0;
+    margin: 0
 }
 
-.card-body {
-    box-shadow: rgb(0 0 0 / 45%) 0px 25px 20px -20px;
+.login .box .input-icon {
+    position: relative
 }
 
-.form-label {
-    font-size: 17px;
-    font-family: calibri;
+.login .box .input-icon input {
+    border-left: 2px solid #4d7496
 }
 
-body {
-    background: #ecf0fa !important;
+.login .box .has-error .input-icon input {
+    border-left-color: #b94a48
+}
+
+.login .box .has-success .input-icon input {
+    border-left-color: #468847
+}
+
+.login .box .checkbox {
+    margin-top: 7px
+}
+
+.login .box .inner-box {
+    background-color: #f9f9f9;
+    border-top: 1px solid #c0c0c0;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset
+}
+
+.login .box .inner-box .content {
+    padding: 12px 30px;
+    text-align: center
+}
+
+.login .box .inner-box a {
+    color: #555;
+    font-size: 12px;
+    font-weight: 600
+}
+
+.login .box .inner-box a:hover {
+    text-decoration: none;
+    color: #4d7496
+}
+
+.login .box .inner-box .close {
+    font-size: 12px;
+    margin-top: -3px;
+    margin-right: -20px
+}
+
+.login .box .inner-box .close.hide-default {
+    display: none
+}
+
+.login .box .inner-box form {
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.login .box .inner-box a+form {
+    margin-top: 20px
+}
+
+.login .box .inner-box .form-group {
+    margin-bottom: 10px
+}
+
+.login .box .inner-box .forgot-password-done {
+    padding: 10px 0
+}
+
+.login .box .inner-box .forgot-password-done .success-icon,
+.login .box .inner-box .forgot-password-done .danger-icon {
+    display: block;
+    font-size: 30px;
+    padding: 15px;
+    padding-top: 0
+}
+
+.login .box .inner-box .forgot-password-done .success-icon {
+    color: #94b86e
+}
+
+.login .box .inner-box .forgot-password-done .danger-icon {
+    color: #e25856
+}
+
+.login .box .inner-box .forgot-password-done span {
+    font-weight: 600
+}
+
+.login .single-sign-on {
+    width: 350px;
+    padding: 15px 0;
+    opacity: .5;
+    -webkit-transition: opacity 200ms ease-out;
+    -moz-transition: opacity 200ms ease-out;
+    -o-transition: opacity 200ms ease-out;
+    transition: opacity 200ms ease-out
+}
+
+.login .single-sign-on:hover {
+    opacity: 1
+}
+
+.login .single-sign-on span {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    color: #888
+}
+
+.login .single-sign-on .btn i {
+    padding-right: 5px
+}
+
+.login .footer {
+    width: 350px;
+    padding-top: 30px
+}
+
+.login .footer a {
+    font-size: 13px;
+    color: #6f6f6f
+}
+
+.login .footer a:hover {
+    text-decoration: none;
+    color: #4d7496
+}
+
+.login .spacing-top {
+    padding-top: 7px !important
 }
