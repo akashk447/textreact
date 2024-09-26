@@ -1,48 +1,43 @@
 import React, { useState } from 'react'
+import { sidebarMenu } from '../data/sidebarMenu';
 
-const AsideBar = ({showSideBar}) => {
+const AsideBar = ({ showSideBar }) => {
     const [tabProduct, settabProduct] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(null);
     return (
         <div>
-            <div id="sidebar" className="sidebar-fixed" style={{display:showSideBar?"block":"none"}}>
+            <div id="sidebar" className="sidebar-fixed" style={{ display: showSideBar ? "block" : "none" }}>
                 <div id="sidebar-content">
                     <ul id="nav">
-                        <li className=''> <a href="index.html"> <i className="icon-dashboard" /> Dashboard </a> </li>
+                        {sidebarMenu.map((item, index) => {
+                            return (
 
-                        <li className={tabProduct ? "current" : ""}> <a href="javascript:void(0);" onClick={() => settabProduct(!tabProduct)}> <i className="icon-edit" /> Products <i class={tabProduct ? "arrow icon-angle-down" : "arrow icon-angle-right"}></i></a>
-                            <ul className="sub-menu" style={{ display: tabProduct ? "block" : "none" }}>
-                                <li>
-                                    <a href="#!">
-                                        <i className="icon-angle-right" /> All Products
+                                <li key={index} className={index === selectedIndex ? "current" : ""}>
+                                    <a href="javascript:void(0);" onClick={() => setSelectedIndex(selectedIndex === index ? null : index)}>
+                                        <i className={item.icon} />
+                                        {item.title}
+                                        {item.children && (
+                                            <i class={index === selectedIndex ? "arrow icon-angle-down" : "arrow icon-angle-right"}></i>
+                                        )}
                                     </a>
+                                    {item.children && (
+                                        <ul className="sub-menu" style={{ display: index === selectedIndex ? "block" : "none" }}>
+                                            {item.children.map((childItem, childIndex) => {
+                                                return (
+                                                    <li key={`${index}-${childIndex}`}>
+                                                        <a href="#!">
+                                                            <i className="icon-angle-right" /> {childItem.title}
+                                                        </a>
+                                                    </li>
+                                                )
+                                            })}
+                                        </ul>
+                                    )}
                                 </li>
-                                <li>
-                                    <a href="#!">
-                                        <i className="icon-angle-right" /> Add New Product
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i className="icon-angle-right" /> Categories
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i className="icon-angle-right" /> Brands
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i className="icon-angle-right" /> Inventory Management
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#!">
-                                        <i className="icon-angle-right" /> Discounts/Promotions
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                            )
+                        })}
+                        {/* <li className=''> <a href="index.html"> <i className="icon-dashboard" /> Dashboard </a> </li> */}
+
 
                     </ul>
                     {/* <div className="sidebar-widget align-center">
