@@ -2,18 +2,16 @@ import React from 'react'
 import TopHeader from './TopHeader'
 import AsideBar from './AsideBar'
 import AppContent from './AppContent'
-import Footer from './Footer'
 
 const DefaultLayout = () => {
     return (
         <div>
-            <div className="wrapper">
-                <TopHeader />
+            <TopHeader />
+            <div id='container'>
                 <AsideBar />
-                <div class="content-wrapper">
+                <div id='content'>
                     <AppContent />
                 </div>
-                <Footer />
             </div>
         </div>
     )
