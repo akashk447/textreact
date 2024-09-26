@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TopHeader = () => {
+const TopHeader = ({ setShowSideBar,showSideBar }) => {
     return (
         <div>
             <header className="header navbar navbar-fixed-top" role="banner">
@@ -8,7 +8,7 @@ const TopHeader = () => {
                     <ul className="nav navbar-nav">
                         <li className="nav-toggle"><a href="javascript:void(0);" title><i className="icon-reorder" /></a></li>
                     </ul> <a className="navbar-brand" href="index.html"> <img src="assets/img/logo.png" alt="logo" />
-                        <strong>ME</strong>LON </a> <a href="#" className="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Toggle navigation"> <i className="icon-reorder" /> </a>
+                        <strong>&nbsp;&nbsp;Seven</strong>DIV </a> <a href="#" onClick={()=>setShowSideBar(!showSideBar)} className="toggle-sidebar bs-tooltip" data-placement="bottom" data-original-title="Toggle navigation"> <i className="icon-reorder" /> </a>
                     <ul className="nav navbar-nav navbar-left hidden-xs hidden-sm">
                         <li> <a href="#"> Dashboard </a> </li>
                         <li className="dropdown"> <a href="#" className="dropdown-toggle" data-toggle="dropdown"> Dropdown <i className="icon-caret-down small" /> </a>
